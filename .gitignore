@@ -1,0 +1,108 @@
+# =========================
+# Python basics
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# =========================
+# Virtual environments
+# =========================
+venv/
+.env/
+.venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# =========================
+# Environment variables
+# =========================
+.env
+.env.*
+*.env
+
+# =========================
+# Logs & temp files
+# =========================
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+
+# =========================
+# FastAPI / Uvicorn
+# =========================
+*.db
+*.sqlite3
+
+# =========================
+# PyTorch / ML models
+# =========================
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.bin
+
+# Large datasets
+data/
+datasets/
+*.csv
+*.tsv
+
+# =========================
+# EasyOCR / OCR outputs
+# =========================
+ocr_output/
+results/
+predictions/
+
+# =========================
+# Jupyter notebooks
+# =========================
+.ipynb_checkpoints
+
+# =========================
+# IDE / Editor files
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Build / distribution
+# =========================
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# =========================
+# Testing / coverage
+# =========================
+.coverage
+htmlcov/
+.pytest_cache/
+
+# =========================
+# Docker
+# =========================
+*.pid
+*.sock
+
+# =========================
+# Misc
+# =========================
+*.bak
+*.backup

@@ -1,3 +1,3 @@
 # Recibo-OCR-API
 
-Recibo is spanish world which means Receipt 
+Recibo is a spanish world which means Receipt 
