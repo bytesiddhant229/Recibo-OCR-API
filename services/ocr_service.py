@@ -19,7 +19,7 @@ class OCRService:
         image_np = self.load_image(image_bytes)
 
         preprocessedImage = preprocess_image(image_np) 
-        results = self.reader.readtext(image_np) # totally forgot to add preprocessed image for ocr, lol - 19-03-26
+        results = self.reader.readtext(image_np) # testing with raw vs preprocessed image (Comparing confidence and processing time, thats why some commits have raw(image_np) or some have preprocessed image)
 
         ocr_result = []
         total_conf = 0.0
