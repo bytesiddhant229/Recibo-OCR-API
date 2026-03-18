@@ -3,6 +3,7 @@ import numpy as np
 from PIL import Image
 import io
 import time
+from services.preprocess import preprocess_image
 
 
 class OCRService:
@@ -16,6 +17,8 @@ class OCRService:
     def extract_text(self, image_bytes:bytes):
         startTime = time.perf_counter()
         image_np = self.load_image(image_bytes)
+
+        precossedImage = preprocess_image(image_np)
         results = self.reader.readtext(image_np)
 
         ocr_result = []
