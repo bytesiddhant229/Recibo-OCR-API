@@ -2,6 +2,7 @@ import easyocr
 import numpy as np
 from PIL import Image
 import io
+import time
 
 
 class OCRService:
@@ -13,16 +14,25 @@ class OCRService:
         return np.array(image)
     
     def extract_text(self, image_bytes:bytes):
+        startTime = time.perf_counter()
         image_np = self.load_image(image_bytes)
         results = self.reader.readtext(image_np)
 
-        return [
-            {
-                "text":text,
+        ocr_result = []
+
+        for (bbox, text, conf) in results:
+            ocr_result.append({
+                "text": str(text),
                 "confidence": float(conf),
                 "bbox": [[int(x), int(y)] for (x, y) in bbox]
-            }
-            for (bbox, text, conf) in results
-        ]
+            })
+        
+        endTime= time.perf_counter()
+
+        return {
+            "processing_time": round(endTime - startTime,3),
+            "results": ocr_result,
+    
+        }
     
 ocr_service = OCRService()

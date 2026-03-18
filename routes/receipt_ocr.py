@@ -14,5 +14,6 @@ async def run_ocr(file: UploadFile = File(...)):
 
     return {
         "filename": file.filename,
-        "results": results
+        "processing_time": results["processing_time"],
+        "results": results["results"]
     }
