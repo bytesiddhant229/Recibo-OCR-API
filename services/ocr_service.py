@@ -8,7 +8,7 @@ from services.preprocess import preprocess_image
 
 class OCRService:
     def __init__(self):
-        self.reader = easyocr.Reader(["en"], gpu=True)
+        self.reader = easyocr.Reader(["en"], gpu=True) # setting up reader n enabling GPU
 
     def load_image(self, image_bytes: bytes):
         image = Image.open(io.BytesIO(image_bytes)).convert("RGB")
@@ -18,8 +18,8 @@ class OCRService:
         startTime = time.perf_counter()
         image_np = self.load_image(image_bytes)
 
-        precossedImage = preprocess_image(image_np)
-        results = self.reader.readtext(image_np)
+        preprocessedImage = preprocess_image(image_np) 
+        results = self.reader.readtext(preprocessedImage) # totally forgot to add preprocessed image for ocr, lol - 19-03-26
 
         ocr_result = []
 
